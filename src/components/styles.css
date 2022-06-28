@@ -66,3 +66,10 @@
   font-size: 25px;
   cursor: pointer;
 }
+
+.todos_single--text {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
