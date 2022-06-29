@@ -3,6 +3,7 @@ import './styles.css'
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
 import TodoList from './TodoList'
+import React, { useRef, useState } from 'react'
 
 type Props = {
   todo: Todo,
@@ -11,6 +12,8 @@ type Props = {
 }
 
 const SingleTodo = ({ todo, todos, setTodos}: Props) => {
+  const [editMode, setEditMode] = useState<boolean>(false)
+  const [editTodo, setEditTodo] = useState<string>(todo.todo)
 
   const handleDone = (id: number) => {
     setTodos(todos.map((todo) => todo.id === id ? { ...todo, isDone: !todo.isDone} : todo)
@@ -20,18 +23,37 @@ const SingleTodo = ({ todo, todos, setTodos}: Props) => {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
 
+  const changeEditMode = () => {
+    if (!editMode && !todo.isDone) {
+      setEditMode(!editMode)
+    }
+  }
+
+  const handleEdit = (e: React.FormEvent, id: number) => {
+    e.preventDefault()
+
+    setTodos(todos.map((todo) => (
+      todo.id === id ? { ...todo, todo: editTodo } : todo
+    )))
+    setEditMode(false)
+  }
+
   return (
-    <form className="todos_single">
+    <form className="todos_single" onSubmit={(e) => handleEdit(e, todo.id)}>
       {
-        todo.isDone ? (
-          <s className="todos_single--text">{todo.todo}</s>
+        editMode ? (
+          <input value={editTodo} onChange={(e) => setEditTodo(e.target.value)} className="todos_single--text" />
         ) : (
-          <span className="todos_single--text">{todo.todo}</span>
+          todo.isDone ? (
+            <s className="todos_single--text">{todo.todo}</s>
+          ) : (
+            <span className="todos_single--text">{todo.todo}</span>
+          )
         )
       }
 
       <div>
-        <span className="icon"><AiFillEdit /></span>
+        <span className="icon" onClick={changeEditMode}><AiFillEdit /></span>
         <span className="icon" onClick={() => handleDelete(todo.id)}><AiFillDelete /></span>
         <span className="icon" onClick={() => handleDone(todo.id)}><MdDone /></span>
       </div>
