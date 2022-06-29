@@ -3,7 +3,7 @@ import './styles.css'
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
 import TodoList from './TodoList'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 type Props = {
   todo: Todo,
@@ -38,11 +38,17 @@ const SingleTodo = ({ todo, todos, setTodos}: Props) => {
     setEditMode(false)
   }
 
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [editMode])
+
+  const inputRef = useRef<HTMLInputElement>(null)
+
   return (
     <form className="todos_single" onSubmit={(e) => handleEdit(e, todo.id)}>
       {
         editMode ? (
-          <input value={editTodo} onChange={(e) => setEditTodo(e.target.value)} className="todos_single--text" />
+          <input ref={inputRef} value={editTodo} onChange={(e) => setEditTodo(e.target.value)} className="todos_single--text" />
         ) : (
           todo.isDone ? (
             <s className="todos_single--text">{todo.todo}</s>
