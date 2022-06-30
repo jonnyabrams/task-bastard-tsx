@@ -22,7 +22,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <DragDropContext>
+    <DragDropContext onDragEnd={() => {}}>
       <div className="App">
         <span>
           <img src={Bastard} style={{ height: "100px" }} />
