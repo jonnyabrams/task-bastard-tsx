@@ -35,9 +35,10 @@ const App: React.FC = () => {
       return
     }
 
-    let add
-    let active = todos
-    let complete = completedTodos
+    let add,
+      active = todos,
+      complete = completedTodos
+      
     // Source Logic
     if (source.droppableId === "TodosList") {
       add = active[source.index]
