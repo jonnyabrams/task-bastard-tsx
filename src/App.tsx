@@ -5,6 +5,7 @@ import TodoList from './components/TodoList'
 import { Todo } from './model'
 import Bastard from './img/bastard.png'
 import SpeechBubble from './img/do-yer-tasks.png'
+import NiceOne from './img/nice-one.png'
 import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 
 const App: React.FC = () => {
@@ -38,7 +39,7 @@ const App: React.FC = () => {
     let add,
       active = todos,
       complete = completedTodos
-      
+
     // Source Logic
     if (source.droppableId === "TodosList") {
       add = active[source.index]
@@ -63,8 +64,8 @@ const App: React.FC = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="App">
         <span>
-          <img src={Bastard} style={{ height: "100px" }} alt="" />
-          <img src={SpeechBubble} style={{ height: "100px" }} alt="" />
+          <img src={Bastard} style={{ height: "130px" }} alt="" />
+          <img src={SpeechBubble} style={{ height: "130px" }} alt="" />
         </span>
         <span className="heading">Task Bastard</span>
         <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
