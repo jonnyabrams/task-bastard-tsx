@@ -1,6 +1,10 @@
-## To-Do List (React & TypeScript)
+## Task Bastard
 
-A to-do list built while trying out React with TypeScript
+An uncompromising drag-and-drop task manager I built with React and TypeScript while trying to get familiar with the latter.
+
+## Video demo
+
+https://user-images.githubusercontent.com/97295867/176699455-d8a628b3-8b17-4614-a838-056968cd2890.mp4
 
 Add --template typescript to end of usual npx create-react-app command
 
