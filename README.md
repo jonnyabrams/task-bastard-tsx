@@ -10,6 +10,16 @@ https://user-images.githubusercontent.com/97295867/176699455-d8a628b3-8b17-4614-
 
 ---
 
+## Instructions for use
+
+1. Clone this repository
+2. cd into its directory
+3. Run `npm install` in the terminal to install the dependencies
+4. Run `npm start` and go to [http://localhost:3000](http://localhost:3000) in your browser
+5. Do yer tasks!
+
+---
+
 ## Technologies used
 
 * React
