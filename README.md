@@ -2,6 +2,8 @@
 
 An uncompromising drag-and-drop task manager I built with React and TypeScript while trying to get familiar with the latter.
 
+![C0438637-2E87-47E6-992B-AF38240C25B2](https://user-images.githubusercontent.com/97295867/176701819-8aa011e5-34c0-4dac-8e67-8c68864d1916.jpeg)
+
 ---
 
 ## Video demo
