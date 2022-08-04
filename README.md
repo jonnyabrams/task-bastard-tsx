@@ -2,6 +2,8 @@
 
 An uncompromising drag-and-drop task manager I built with React and TypeScript while trying to get familiar with the latter.
 
+Try it out: [https://task-bastard-tsx.vercel.app/](https://task-bastard-tsx.vercel.app/)
+
 <img width="1440" alt="Screenshot 2022-06-30 at 15 24 14" src="https://user-images.githubusercontent.com/97295867/176702285-1d1bff35-9c69-4198-aeaa-84ab578fbe10.png">
 
 ---
